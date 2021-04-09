@@ -1,4 +1,6 @@
 STEP 1 - Should have a Working Cypress Project and Docker setup on your local machine.
+If not, kindly refer to the following link : -
+https://docs.docker.com/engine/install/
 STEP 2 - Create a Dockerfile to build an image for your Project. 
 Rather then building everything from scratch we will extend an existing Cypress Docker images.
 GitHub page for Docker images is https://github.com/cypress-io/cypress-docker-images.
@@ -25,7 +27,7 @@ This will allow us to pick our specific commands from package.json file. And hen
 
 VOLUME - By default all files created inside a container are stored on a writable container layer.
         The data doesn’t persist when that container no longer exists, and it can be difficult to get the data out of the container if another process needs it.
-        Docker via volume offers the persistent data capability and hence the files are persisted even after the container stops.
+        Docker via volume offers the data persistence capability, which means the files are persisted even after the container stops.
 
 STEP 3 - Create a docker-compose.yml file - 
         This will allow us to run cypress on different browsers with just one command, docker-compose run e2e-chrome.
