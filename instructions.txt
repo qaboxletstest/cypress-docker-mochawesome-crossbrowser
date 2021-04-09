@@ -13,6 +13,7 @@ This image has Debian GNU/Linux 10 (buster) Operating System.
                 COPY ./cypress ./cypress
                 RUN npm install
                 ENTRYPOINT ["npm", "run"]
+ANd to build an image use - docker build -t cyp-dock-mocha-report .
 ENTRYPOINT - An ENTRYPOINT allows you to configure a container that will run as an executable. 
             Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT, and will override all elements specified using CMD. 
             This allows arguments to be passed to the entry point, i.e., docker run <image> -d will pass the -d argument to the entry point. 
@@ -26,5 +27,6 @@ VOLUME - By default all files created inside a container are stored on a writabl
         The data doesn’t persist when that container no longer exists, and it can be difficult to get the data out of the container if another process needs it.
         Docker via volume offers the persistent data capability and hence the files are persisted even after the container stops.
 
-STEP 3 - Create a docker-compose.yml file - This will allow us to run cypress on different browsers with just one command.
+STEP 3 - Create a docker-compose.yml file - 
+        This will allow us to run cypress on different browsers with just one command, docker-compose run e2e-chrome.
         We can also achieve parallel Cypress run on different browser by just saying docker-compose up. 
