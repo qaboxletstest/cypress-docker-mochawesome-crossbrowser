@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean:reports": "mkdir -p cypress/reports && rm -R -f cypress/reports/* && mkdir cypress/reports/mochareports ",
+    "clean:reports": "mkdir -p cypress/reports && rm -R -f cypress/reports/* && mkdir cypress/reports/mochareports",
     "pretest": "npm run clean:reports",
     "scripts": "cypress run",
     "chrome:scripts": "cypress run --browser chrome ",
@@ -13,8 +13,8 @@
     "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
     "posttest": "npm run combine-reports && npm run generate-report",
     "test": "npm run scripts || npm run posttest",
-    "chrome:test": "npm run chrome:scripts || npm run posttest",
-    "firefox:test": "npm run firefox:scripts || npm run posttest"
+    "chrome:test": "npm run pretest && npm run chrome:scripts || npm run posttest",
+    "firefox:test": "npm run pretest && npm run firefox:scripts || npm run posttest"
   },
   "keywords": [],
   "author": "QA BOX <qabox@gmail.com>",
