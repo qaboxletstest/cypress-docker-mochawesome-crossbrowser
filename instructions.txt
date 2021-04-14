@@ -20,7 +20,11 @@ Add to build an image use - docker build -t cyp-dock-mocha-report .
 Some Important Terms - 
 IMAGE - A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. It provides a convenient way to package up applications and preconfigured server environments, which you can use for your own private use or share publicly with other Docker users.
 
+In simple words you can say an image is a static snapshot of container's configuration.
+
 CONTAINER -  A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.
+
+In simple words you can say a container is an application sandbox. Each container is based on an image.
 
 ENTRYPOINT - An ENTRYPOINT allows you to configure a container that will run as an executable. 
             Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT, and will override all elements specified using CMD. 
