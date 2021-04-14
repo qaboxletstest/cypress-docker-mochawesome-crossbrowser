@@ -15,11 +15,18 @@ This image has Debian GNU/Linux 10 (buster) Operating System.
                 COPY ./cypress ./cypress
                 RUN npm install
                 ENTRYPOINT ["npm", "run"]
-ANd to build an image use - docker build -t cyp-dock-mocha-report .
+Add to build an image use - docker build -t cyp-dock-mocha-report .
+
+Some Important Terms - 
+IMAGE - A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. It provides a convenient way to package up applications and preconfigured server environments, which you can use for your own private use or share publicly with other Docker users.
+
+CONTAINER -  A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. You can connect a container to one or more networks, attach storage to it, or even create a new image based on its current state.
+
 ENTRYPOINT - An ENTRYPOINT allows you to configure a container that will run as an executable. 
             Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT, and will override all elements specified using CMD. 
             This allows arguments to be passed to the entry point, i.e., docker run <image> -d will pass the -d argument to the entry point. 
             You can override the ENTRYPOINT instruction using the docker run --entrypoint flag.
+            
 COMMAND - The main purpose of a CMD is to provide defaults for an executing container. These defaults can include an executable, or they can omit the executable, in which case you must specify an ENTRYPOINT instruction as well.
 
 We are building this images to overwrite ENTRYPOINT of our base image, cypress/included:6.8.0.
