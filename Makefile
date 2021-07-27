@@ -1,5 +1,5 @@
 specificFile:
-	docker-compose run e2e-electron
+	docker-compose run e2e-electron 
 
 e2e:
 	docker-compose run e2e-chrome
