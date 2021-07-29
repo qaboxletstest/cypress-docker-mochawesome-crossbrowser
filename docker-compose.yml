@@ -3,7 +3,7 @@ services:
   # this container will run Cypress test using built-in Electron browser
   e2e-electron:
     image: "cyp-dock-mocha-report"
-    command: "test"
+    command: ["scripts", "--spec", '${TESTFILE}']
     volumes:
       - ./cypress/videos:/cypress-docker/cypress/videos
       - ./cypress/reports:/cypress-docker/cypress/reports
